@@ -6,9 +6,9 @@ function Header() {
 	const location = useLocation()
 	return (
 		<header
-			className={location.pathname === "/"? 'header' : 'sub_header'}
+			className={location.pathname === `${process.env.PUBLIC_URL}/`? 'header' : 'sub_header'}
 		>
-			<Link to={'/'} className="go_home"><MdLocalMovies /><span>Movie</span></Link>
+			<Link to={`${process.env.PUBLIC_URL}/`} className="go_home"><MdLocalMovies /><span>Movie</span></Link>
 		</header>
 	)
 }
