@@ -1,0 +1,37 @@
+.card{cursor:pointer}
+.thumb_wrap{position:relative;border-radius:12px}
+.thumb_wrap:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 18px;
+  right: 10px;
+  width: 60%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 20px 10px #777;
+  -moz-box-shadow: 0 20px 10px #777;
+  box-shadow: 0 20px 10px #777;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+.thumb_wrap img{overflow:hidden;border-radius:12px;width:100%;}
+.tlt{margin-top:12px;font-size:16px;font-weight:800;word-break:break-word;}
+.tag{display:inline-block;margin-top:6px;font-size:14px;font-weight:800;color:#666;}
+.tag+.tag:before{content:', '}
+
+.skeleton .inner{overflow:hidden;position:relative;width:80%;margin:0 auto;padding-top:110%;border-radius:12px;background-color:#f5f5f5;}
+.skeleton .inner:before{content:'';position:absolute;top:0;left:0;width:40px;height:100%;background: linear-gradient(to right, #f2f2f2, #e7e7e7, #f2f2f2);animation: loading 2s infinite linear;}
+@keyframes loading {
+	0% {
+		transform: translateX(0);
+	}
+	50%,
+	100% {
+		transform: translateX(460px);
+	}
+}

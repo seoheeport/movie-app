@@ -1,0 +1,36 @@
+.popup{max-width:720px;min-width:320px;margin:0 auto;position:fixed;top:0;right:0;left:0;bottom:0;transition:all 0.3s ease;transform:translateY(100%);z-index:20;}
+.popup.loaded{transform:translateY(0);opacity:1;}
+
+.popup_header{position:fixed;left:0;top:0;width:100%;padding:14px 20px;z-index:20;box-sizing:border-box;}
+.popup_header>button{font-size:28px;vertical-align:middle;color:#fff;}
+
+.inner_wrap{overflow-y:auto;position:fixed;top:0;right:0;left:0;bottom:0;z-index:19;}
+.inner_wrap_sub{top:50px;}
+
+.inner{position:relative;top:50%;min-height:50%;padding:32px 20px 72px;background-color:#fff;border-radius:18px 18px 0 0;}
+.tlt{margin-bottom:18px;font-size:26px;font-weight:800;line-height:1.2;}
+.txt{margin-top:6px;font-size:14px;font-weight:600;color:#999;}
+.tag+.tag:before{content:', '}
+.desc{margin-top:32px;font-size:14px;line-height:1.3;}
+
+.circle_rating{position:fixed;right:30px;bottom:18px;width:56px;height:56px;}
+.circle_rating svg{position:relative;width:100%;height:100%;transform:rotate(-90deg);z-index:20;}
+.rating{position:absolute;left:0;top:0;width:100%;border-radius:40px;background-color:#fff;text-align:center;line-height:56px;font-size:20px;font-weight:800;color:#051d52}
+
+.back_dim{position:fixed;top:0;right:0;bottom:0;left:0;background-color:#000;transition:all 0.3s ease;z-index:18;opacity:0;text-align:center;}
+.back_dim:after{content:'';position:absolute;left:0;top:0;display:inline-block;width:100%;height:100%;background:linear-gradient(to bottom, #00000090 0%, #00000000 15%, #00000000 100%);z-index:18;}
+.back_dim >img{position:relative;width:150px;padding-top:40%;transition:all 0.3s ease;z-index:18;}
+.back_dim.loaded{opacity:1;}
+.back_dim.loaded >img{width:100%;margin-top:-15%;padding:0;}
+
+.skeleton .inner{overflow:hidden;position:relative;padding-top:150%;border-radius:12px;background-color:#f5f5f5;}
+.skeleton .inner:before{content:'';position:absolute;top:0;left:0;width:30px;height:100%;background:linear-gradient(to right, #f2f2f2, #e7e7e7, #f2f2f2);animation: loading 3s infinite linear;}
+@keyframes loading {
+	0% {
+		transform: translateX(0);
+	}
+	50%,
+	100% {
+		transform: translateX(460px);
+	}
+}
