@@ -6,6 +6,7 @@ import { IoArrowBack } from "react-icons/io5";
 function DetailPopup({ detailId, onClose }) {
 	const [movie, setMovie] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [imgLoaded, setImgLoaded] = useState(false);
 
 	useEffect(()=>{
 		const getMovie = async() => {
@@ -30,6 +31,10 @@ function DetailPopup({ detailId, onClose }) {
 		// 	window.scrollTo(0, parseInt(scrollY || '0') * -1)
 		// }
 	}, [])
+
+	const onImgLoaded = ()=>{
+		setImgLoaded(true);
+	}
 	
 	return (
 		<div
@@ -37,7 +42,8 @@ function DetailPopup({ detailId, onClose }) {
 		>
 			<div className={styles.popup_header}><button onClick={onClose}><IoArrowBack /></button></div>
 			<div className={`${styles.back_dim} ${loading ? styles.loading : styles.loaded}`}>
-				<img src={movie.large_cover_image} alt={movie.title} />
+				<img src={imgLoaded?movie.large_cover_image:movie.medium_cover_image} alt={movie.title} />
+				<img src={movie.large_cover_image} onLoad={()=>{onImgLoaded()}} style={{display:"none"}} alt={movie.title} />
 			</div>
 			<div className={styles.inner_wrap}>
 				<div className={styles.inner}>
